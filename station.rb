@@ -1,19 +1,14 @@
 class Station
-  def initialize(name, line_arr, lines_can_reach_arr)
+  def initialize(name, station_connections)
     @name = name
-    @lines = line_arr
-    @lines_can_reach = lines_can_reach_arr
+    @connections = station_connections
   end
 
   def return_name()
     @name
   end
 
-  def return_lines()
-    @lines
-  end
-
-  def return_lines_can_reach()
-    @lines_can_reach
+  def return_connections()
+    @connections
   end
 end

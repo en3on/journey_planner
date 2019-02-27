@@ -1,48 +1,83 @@
 require './station'
 
-#@asia_world_expo = Station.new("Asia World Expo", ["Airport Express"])
+@asiaworld_expo = Station.new("AsiaWorld Expo", ["Airport"])
+@airport = Station.new("Airport", ["AsiaWorld Expo", "Sunny Bay"])
+@sunny_bay = Station.new("Sunny Bay", ["Airport", "Tung Chung", "Tsing Yi", "Disneyland Resort"])
+@tung_chung = Station.new("Tung Chung", ["Sunny Bay"])
+@disneyland_resort = Station.new("Disneyland Resort", ["Sunny Bay"])
+@tsing_yi = Station.new("Tsing Yi", ["Sunny Bay", "Lai King"])
+@lai_king = Station.new("Lai King", ["Tsing Yi", "Kwai Fong", "Mei Foo", "Nam Cheong", "Olympic"])
+@olympic = Station.new("Olympic", ["Kowloon"])
+@kowloon = Station.new("Kowloon", ["Olympic", "Hong Kong"])
+@hong_kong = Station.new("Hong Kong", ["Kowloon"])
+#@kowloon = Station.new("Kowloon", ["Kowloon"])
 
-@airport = Station.new("Airport", ["Airport Express"], ["Airport Express", "Tung Chung", "Disneyland Resort", "Tsuen Wan"])
+# purple line
+@mei_foo = Station.new("Mei Foo", ["Lai King", "Tsuen Wan West", "Nam Cheong", "Lai Chi Kok"])
+@nam_cheong = Station.new("Nam Cheong", ["Mei Foo", "Lai King", "Austin"])
+@tsuen_wan_west = Station.new("Tsuen Wan West", ["Mei Foo", "Kam Sheung Road"])
+@kam_sheung_road = Station.new("Kam Sheung Road", ["Tsuen Wan West", "Yuen Long"])
+@yuen_long = Station.new("Yuen Long", ["Kam Sheung Road", "Long Ping"])
+@long_ping = Station.new("Long Ping", ["Yuen Long", "Tin Shui Wai"])
+@tin_shui_wai = Station.new("Tin Shui Wai", ["Long Ping", "Siu Hong"])
+@siu_hong = Station.new("Siu Hong", ["Tin Shui Wai", "Tuen Mun"])
+@tuen_mun = Station.new("Tuen Mun", ["Siu Hong"])
+@austin = Station.new("Austin", ["Nam Cheong", "East Tsim Sha Tsui"])
+@east_tsim_sha_tsui = Station.new("East Tsim Sha Tsui", ["Austin", "Hung Hom"])
+@hung_hom = Station.new("Hung Hom", ["East Tsim Sha Tsui"])
 
-#@tung_chung = Station.new("Tung Chung", ["Tung Chung"])
+# red line
 
-#@sunny_bay = Station.new("Sunny Bay", ["Airport Express", "Tung Chong", "Disneyland Resort"])
+@tsuen_wan = Station.new("Tsuen Wan", ["Tai Wo Hau"])
+@tai_wo_hau = Station.new("Tai Wo Hau", ["Tsuen Wan", "Kwai Hing"])
+@kwai_hing = Station.new("Kwai Hing", ["Tai Wo Hau", "Kwai Fong"])
+@kwai_fong = Station.new("Kwai Fong", ["Kwai Hing", "Lai King"])
+@lai_chi_kok = Station.new("Lai Chi Kok", ["Mei Foo", "Cheung Sha Wan"])
+@cheung_sha_wan = Station.new("Cheung Sha Wan", ["Lai Chi Kok", "Sham Shui Po"])
+@sham_shui_po = Station.new("Sham Shui Po", ["Cheung Sha Wan", "Prince Edward"])
+@prince_edward = Station.new("Prince Edward", ["Sham Shui Po", "Mong Kok"])
+@mong_kok = Station.new("Mong Kok", ["Prince Edward", "Yau Ma Tei"])
+@yau_ma_tei = Station.new("Yau Ma Tei", ["Mong Kok", "Jordan"])
+@jordan = Station.new("Jordan", ["Yau Ma Tei", "Tsim Sha Tsui"])
+@tsim_sha_tsui = Station.new("Tsim Sha Tsui", ["Jordan", "Admiralty"])
+@admiralty = Station.new("Admiralty", ["Tsim Sha Tsui", "Central"])
+@central = Station.new("Central", ["Admiralty"])
 
-#@disneyland_resort = Station.new("Disneyland Resort", ["Disneyland Resort"])
-
-#@tsing_yi = Station.new("Tsing Yi", ["Airport Express", "Tung Chong"])
-
-@lai_king = Station.new("Lai King", ["Airport Express", "Tung Chong", "Tsuen Wan"], ["Airport Express", "Tung Chong", "Tsuen Wan", "Tseung Kwan"])
-
-#@tsuen_wan = Station.new("Tsuen Wan", ["Tsuen Wan"])
-
-#@tai_wo_hau = Station.new("Tai Wo Hau", ["Tsuen Wan"])
-
-#@kwai_hing = Station.new("Kwai Hing", ["Tsuen Wan"])
-
-@mei_foo = Station.new("Mei Foo", ["Tsuen Wan", "Tseung Kwan"])
-
-#@lei_chi_kok = Station.new("Lei Chi Kok", ["Tsuen Wan"])
-
-#@cheung_sha_wan = Station.new("Cheung Sha Wan", ["Tsuen Wan"])
-
-#@sham_shui_po = Station.new("Sham Shui Po", ["Tsuen Wan"])
-
-#@prince_edwards = Station.new("Prince Edwards", ["Tsuen Wan", "Kwun Tong"])
-
-#@mong_kok = Station.new("Mong Kok", ["Tsuen Wan", "Kwun Tong"])
-
-#@yau_ma_tei = Station.new("Yau Ma Tei", ["Tsuen Wan", "Kwun Tong"])
-
-#@jordan = Station.new("Jordan", ["Tsuen Wan", "Kwun Tong"])
-
-@tsuen_wan_west = Station.new("Tsuen Wan West", ["Tseung Kwan"], ["Tsuen Wan", "Tseung Kwan"])
-# 
-# asia_world_expo = Station.new("Asia World Expo", ["Airport Express"])
-# 
-# asia_world_expo = Station.new("Asia World Expo", ["Airport Express"])
-# 
-#@stations_arr = [@asia_world_expo, @airport, @tung_chung, @sunny_bay, @disneyland_resort, @tsing_yi, @lai_king, @tsuen_wan, @tai_wo_hau, @kwai_hing, @lai_king,
-                 #@tsuen_wan, @tai_wo_hau, @kwai_hing, @mei_foo, @lei_chi_kok, @cheung_sha_wan, @sham_shui_po, @prince_edwards, @mong_kok, @yau_ma_tei, @jordan, @tsuen_wan_west]
-
-@stations_arr = [@airport, @lai_king, @mei_foo, @tsuen_wan_west]
+@stations_arr = [
+  @asiaworld_expo,
+  @airport,
+  @sunny_bay,
+  @tung_chung,
+  @disneyland_resort,
+  @tsing_yi,
+  @lai_king,
+  @tsuen_wan_west,
+  @mei_foo,
+  @olympic,
+  @kowloon,
+  @hong_kong,
+  @nam_cheong,
+  @kam_sheung_road,
+  @yuen_long,
+  @long_ping,
+  @tin_shui_wai,
+  @siu_hong,
+  @tuen_mun,
+  @austin,
+  @east_tsim_sha_tsui,
+  @hung_hom,
+  @tsuen_wan,
+  @tai_wo_hau,
+  @kwai_hing,
+  @kwai_fong,
+  @lai_chi_kok,
+  @cheung_sha_wan,
+  @sham_shui_po,
+  @prince_edward,
+  @mong_kok,
+  @yau_ma_tei,
+  @jordan,
+  @tsim_sha_tsui,
+  @admiralty,
+  @central
+]
