@@ -67,6 +67,7 @@ def path_finder(origin, destination)
                 if (path_finder(origin_station, destination) == "station_return")
                   puts("#{station.return_name()} returned")
                   @station_found = true
+                  break
                 end
 
                 binding.pry unless !@debug
@@ -95,5 +96,13 @@ def find_connections(origin, destination)
   while !@station_found
     path_finder(origin, destination)
   end
-  return "finished"
+
+  previous_stations_to_remove = (@previous_stations.length - 1) / 2
+  for i in 0...previous_stations_to_remove
+    @previous_stations.pop()
+  end
+
+  @previous_stations << destination.return_name()
+
+  return @previous_stations
 end

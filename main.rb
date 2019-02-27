@@ -4,7 +4,7 @@ require './journey_finder'
 require 'pry'
 
 # Debug mode option. 
-@debug = true 
+@debug = false 
 
 binding.pry unless !@debug
 
@@ -14,7 +14,10 @@ destination_station = get_destination_station(@stations_arr)
 #if is_on_same_line?(origin_station, destination_station)
   #puts("No need for a changeover! Just stay on the same train!") 
 #else
-  find_connections(origin_station, destination_station)
+  journey = find_connections(origin_station, destination_station)
+
+  puts
+  puts(journey)
 
   binding.pry unless !@debug
   
