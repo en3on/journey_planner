@@ -44,9 +44,13 @@ def path_finder(origin, destination)
         }
 
         @excluded_stations << origin.return_name()
+        if (path_finder(origin_station, destination) == "DIE")
+          return "DIE"
+        end
         if (path_finder(origin_station, destination) == "station_return")
           puts("#{station.return_name()} returned")
           @station_found = true
+          return "DIE"
         end
       else
 
@@ -64,9 +68,13 @@ def path_finder(origin, destination)
                 @previous_stations << origin.return_name() 
                 origin_station = station
 
+                if (path_finder(origin_station, destination) == "DIE")
+                  return "DIE"
+                end
                 if (path_finder(origin_station, destination) == "station_return")
                   puts("#{station.return_name()} returned")
                   @station_found = true
+                  return "DIE" 
                   break
                 end
 
@@ -95,11 +103,6 @@ end
 def find_connections(origin, destination)
   while !@station_found
     path_finder(origin, destination)
-  end
-
-  previous_stations_to_remove = (@previous_stations.length - 1) / 2
-  for i in 0...previous_stations_to_remove
-    @previous_stations.pop()
   end
 
   @previous_stations << destination.return_name()
