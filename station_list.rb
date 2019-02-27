@@ -35,8 +35,9 @@ require './station'
 @cheung_sha_wan = Station.new("Cheung Sha Wan", ["Lai Chi Kok", "Sham Shui Po"])
 @sham_shui_po = Station.new("Sham Shui Po", ["Cheung Sha Wan", "Prince Edward"])
 @prince_edward = Station.new("Prince Edward", ["Sham Shui Po", "Mong Kok"])
-@mong_kok = Station.new("Mong Kok", ["Prince Edward", "Yua Ma Tei"])
+@mong_kok = Station.new("Mong Kok", ["Prince Edward", "Yau Ma Tei"])
 @yau_ma_tei = Station.new("Yau Ma Tei", ["Mong Kok", "Jordan"])
+@jordan = Station.new("Jordan", ["Yau Ma Tei", "Tsim Sha Tsui"])
 @tsim_sha_tsui = Station.new("Tsim Sha Tsui", ["Jordan", "Admiralty"])
 @admiralty = Station.new("Admiralty", ["Tsim Sha Tsui", "Central"])
 @central = Station.new("Central", ["Admiralty"])
@@ -72,9 +73,11 @@ require './station'
   @kwai_fong,
   @lai_chi_kok,
   @cheung_sha_wan,
+  @sham_shui_po,
   @prince_edward,
   @mong_kok,
   @yau_ma_tei,
+  @jordan,
   @tsim_sha_tsui,
   @admiralty,
   @central

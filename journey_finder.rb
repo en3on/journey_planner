@@ -11,8 +11,8 @@ require 'pry'
 
 def path_finder(origin, destination)
   while !@station_found
-    puts("\n\nCurrent station: #{origin.return_name()}")
-    puts("Destination: #{destination.return_name()}")
+    puts("\n\nCurrent station: #{origin.return_name()}") unless !@debug
+    puts("Destination: #{destination.return_name()}") unless !@debug
 
     if (origin == destination) 
       return "station_return" 
@@ -48,7 +48,7 @@ def path_finder(origin, destination)
           return "DIE"
         end
         if (path_finder(origin_station, destination) == "station_return")
-          puts("#{station.return_name()} returned")
+          puts("#{station.return_name()} returned") unless !@debug
           @station_found = true
           return "DIE"
         end
@@ -72,7 +72,7 @@ def path_finder(origin, destination)
                   return "DIE"
                 end
                 if (path_finder(origin_station, destination) == "station_return")
-                  puts("#{station.return_name()} returned")
+                  puts("#{station.return_name()} returned") unless !@debug
                   @station_found = true
                   return "DIE" 
                   break
@@ -92,8 +92,8 @@ end
 
 def includes_all_connections(origin_connections)
   outcome_arr = origin_connections.map { |connection|
-    puts("#{connection} is current connection")
-    puts("Is current connection included in previous stations? #{@previous_stations.include?(connection)}")
+    puts("#{connection} is current connection") unless !@debug
+    puts("Is current connection included in previous stations? #{@previous_stations.include?(connection)}") unless !@debug
     @previous_stations.include?(connection)
   }
 
