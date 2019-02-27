@@ -28,8 +28,13 @@ system `clear`
 
 journey = find_connections(origin_station, destination_station)
 
+puts("Stop list: ")
 puts
-puts(journey)
+#puts(journey)
+
+for station_num in 1..journey.length
+  puts("#{station_num}. #{journey[station_num - 1]}")
+end
 
 binding.pry unless !@debug
   

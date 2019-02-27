@@ -6,24 +6,25 @@ require './station'
 @tung_chung = Station.new("Tung Chung", ["Sunny Bay"])
 @disneyland_resort = Station.new("Disneyland Resort", ["Sunny Bay"])
 @tsing_yi = Station.new("Tsing Yi", ["Sunny Bay", "Lai King"])
-@lai_king = Station.new("Lai King", ["Tsing Yi", "Kwai Fong", "Mei Foo", "Nam Cheong"])
-@olympic = Station.new("Olympic", ["Nam Cheong", "Kowloon"])
+@lai_king = Station.new("Lai King", ["Tsing Yi", "Kwai Fong", "Mei Foo", "Nam Cheong", "Olympic"])
+@olympic = Station.new("Olympic", ["Kowloon"])
 @kowloon = Station.new("Kowloon", ["Olympic", "Hong Kong"])
 @hong_kong = Station.new("Hong Kong", ["Kowloon"])
 #@kowloon = Station.new("Kowloon", ["Kowloon"])
 
 # purple line
-@mei_foo = Station.new("Mei Foo", ["Lai King", "Tsuen Wan West", "Nam Cheong"])
-@nam_cheong = Station.new("Nam Cheong", ["Mei Foo", "Lai King", "Olympic", "Austin"])
+@mei_foo = Station.new("Mei Foo", ["Lai King", "Tsuen Wan West", "Nam Cheong", "Lai Chi Kok"])
+@nam_cheong = Station.new("Nam Cheong", ["Mei Foo", "Lai King", "Austin"])
 @tsuen_wan_west = Station.new("Tsuen Wan West", ["Mei Foo", "Kam Sheung Road"])
-@kam_sheung_road = Station.new("Kam Sheung Road", ["Tsuen Wan West", "Yeun Long"])
-@yuen_long = Station.new("Yeun Long", ["Kam Sheung Road", "Long Ping"])
+@kam_sheung_road = Station.new("Kam Sheung Road", ["Tsuen Wan West", "Yuen Long"])
+@yuen_long = Station.new("Yuen Long", ["Kam Sheung Road", "Long Ping"])
 @long_ping = Station.new("Long Ping", ["Yuen Long", "Tin Shui Wai"])
 @tin_shui_wai = Station.new("Tin Shui Wai", ["Long Ping", "Siu Hong"])
 @siu_hong = Station.new("Siu Hong", ["Tin Shui Wai", "Tuen Mun"])
 @tuen_mun = Station.new("Tuen Mun", ["Siu Hong"])
 @austin = Station.new("Austin", ["Nam Cheong", "East Tsim Sha Tsui"])
 @east_tsim_sha_tsui = Station.new("East Tsim Sha Tsui", ["Austin", "Hung Hom"])
+@hung_hom = Station.new("Hung Hom", ["East Tsim Sha Tsui"])
 
 # red line
 
@@ -50,10 +51,7 @@ require './station'
   @disneyland_resort,
   @tsing_yi,
   @lai_king,
-  @nam_cheong,
   @tsuen_wan_west,
-  @kam_sheung_road,
-  @yuen_long,
   @mei_foo,
   @olympic,
   @kowloon,
@@ -67,6 +65,7 @@ require './station'
   @tuen_mun,
   @austin,
   @east_tsim_sha_tsui,
+  @hung_hom,
   @tsuen_wan,
   @tai_wo_hau,
   @kwai_hing,
