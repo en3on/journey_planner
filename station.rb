@@ -1,7 +1,6 @@
 class Station
-  def initialize(name, line_arr, station_connections)
+  def initialize(name, station_connections)
     @name = name
-    @lines = line_arr
     @connections = station_connections
   end
 
@@ -9,11 +8,7 @@ class Station
     @name
   end
 
-  def return_lines()
-    @lines
-  end
-
   def return_connections()
-    @conections
+    @connections
   end
 end
